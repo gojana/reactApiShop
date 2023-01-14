@@ -18,7 +18,7 @@ const UserBadge = (props) => {
       >
         <div className="w-10 rounded-full">
           <img
-            src={`http://127.0.0.1:4000/api/v1/userResources/${props.photo}`}
+            src={`${process.env.REACT_APP_BASE_URL}/api/v1/userResources/${props.photo}`}
             alt=""
           />
         </div>

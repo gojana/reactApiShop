@@ -17,7 +17,7 @@ const ProductDetImage = (props) => {
             <button className=" bg-cover border-primary w-full rounded-lg h-80 md:h-80 flex transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
               <img
                 className="bg-cover rounded-lg h-80 w-full"
-                src={`http://127.0.0.1:4000/api/v1/productResources/${currentImage}`}
+                src={`${process.env.REACT_APP_BASE_URL}/api/v1/productResources/${currentImage}`}
                 alt=""
               />
             </button>

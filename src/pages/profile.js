@@ -31,7 +31,7 @@ const Profile = (props) => {
             <div className="w-48 h-48 mx-auto absolute inset-x-0 top-0 -mt-24 flex items-center justify-center">
               <img
                 className="btn-ghost btn-circle h-40 w-40"
-                src={`http://127.0.0.1:4000/api/v1/userResources/${userPhotoSelector}`}
+                src={`${process.env.REACT_APP_BASE_URL}/api/v1/userResources/${userPhotoSelector}`}
                 alt=""
               />
             </div>

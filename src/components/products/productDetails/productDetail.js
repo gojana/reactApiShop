@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect} from 'react';
+import { Fragment, useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import requestAPI from '../../../helpers/requestCalls';
 
@@ -47,19 +47,19 @@ const ProductDetail = () => {
       </div>
 
       <div className="max-w-7xl ml-40 sm:x-auto px-4 sm:px-6 lg:px-8 xl:p-2 mt-20">
-      {isLoading && <div className="flex items-center ">
-          <LoadingCard css={"mb-80"} />
-        </div>}
+        {isLoading && (
+          <div className="flex items-center ">
+            <LoadingCard css={'mb-80'} />
+          </div>
+        )}
         <div className="flex flex-col md:flex-row -mx-4 mr-10">
-      
-
           {!isLoading && !requestError && (
             <Fragment>
               <ProductDetImage imgProdCollection={product.images} />
 
               <ProductDetailText
                 id={product._id}
-                img={`http://127.0.0.1:4000/api/v1/productResources/${product.images[0]}`}
+                img={`${process.env.REACT_APP_BASE_URL}/api/v1/productResources/${product.images[0]}`}
                 productName={product.name}
                 price={product.price}
                 dsct={'25%'}

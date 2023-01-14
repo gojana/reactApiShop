@@ -15,7 +15,7 @@ const ProdDetImageItem = (props) => {
       >
         <img
           className="rounded-lg h-20 w-full "
-          src={`http://127.0.0.1:4000/api/v1/productResources/${imgItem}`}
+          src={`${process.env.REACT_APP_BASE_URL}/api/v1/productResources/${imgItem}`}
           alt=""
         />
       </button>

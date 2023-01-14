@@ -1,6 +1,7 @@
 async function requestAPI(url, method, body) {
+
   try {
-    const res = await fetch(`http://127.0.0.1:4000/api/v1/${url}`, {
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v1/${url}`, {
       method: `${method}`,
       credentials: 'include',
       body: JSON.stringify(body),
@@ -19,7 +20,7 @@ async function requestAPI(url, method, body) {
 
 export async function requestAPIwFiles(url, method, body) {
   try {
-    const res = await fetch(`http://127.0.0.1:4000/api/v1/${url}`, {
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v1/${url}`, {
       method: `${method}`,
       credentials: 'include',
       body: body,

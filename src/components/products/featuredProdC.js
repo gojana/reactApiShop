@@ -9,7 +9,7 @@ import { notificationActions } from '../../redux/slices/notification-slice';
 import LoadingCard from '../utilitaryCards/loadingCard';
 import ErrorCard from '../utilitaryCards/errorCard';
 
-function FeaturedProdC(props) {
+const FeaturedProdC = (props) => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -75,7 +75,7 @@ function FeaturedProdC(props) {
             <FeaturedProdItem
               key={item._id}
               id={item._id}
-              imgProd={`http://127.0.0.1:4000/api/v1/productResources/${item.images[0]}`}
+              imgProd={`${process.env.REACT_APP_BASE_URL}/api/v1/productResources/${item.images[0]}`}
               nameProd={item.name}
               price={item.price}
             />
@@ -105,5 +105,5 @@ function FeaturedProdC(props) {
       ></Pagination>
     </Fragment>
   );
-}
+};
 export default FeaturedProdC;

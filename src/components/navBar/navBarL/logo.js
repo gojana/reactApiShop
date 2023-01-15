@@ -8,7 +8,11 @@ function Logo() {
       to="/welcome"
       className="btn btn-ghost normal-case ml-5 text-3xl sm:ml-0"
     >
-      <img src={imgLogo} alt="" className="h-14 w-40"></img>
+      <img
+        src={imgLogo}
+        alt=""
+        className="h-14 w-40 lg:w-40 md:w-40 sm:w-24 sm:h-12"
+      ></img>
     </Link>
   );
 }

@@ -13,10 +13,11 @@ const ProductsComp = (props) => {
 
   return (
     <Fragment>
-      <div className="navbar bg-base-100 justify-end mt-5 -mb-5 flex  sm:flex-row">
+      <div className="navbar bg-base-100 justify-end lg:flex-row md:flex-row mt-5 -mb-5 flex sm:flex-col">
         <TxtNavBarL text={props.textNavBar}/>
-        <MenuCategorias filterEx={filterLiftUp} />
         <SearchTool />
+        <MenuCategorias filterEx={filterLiftUp} />
+        
       </div>
       <FeaturedProdC nItems={props.numItems} filter={filter} />
     </Fragment>

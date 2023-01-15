@@ -1,5 +1,4 @@
 async function requestAPI(url, method, body) {
-
   try {
     const res = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v1/${url}`, {
       method: `${method}`,
@@ -8,7 +7,7 @@ async function requestAPI(url, method, body) {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'http://127.0.0.1:3000',
+        //'Access-Control-Allow-Origin': 'http://127.0.0.1:3000',
       },
     });
     const dataParsed = await res.json();

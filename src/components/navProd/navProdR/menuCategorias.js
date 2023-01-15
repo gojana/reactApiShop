@@ -9,10 +9,10 @@ const MenuCategorias = (props) => {
   };
 
   return (
-    <div className="dropdown dropdown-hover pr-15" ref={ref}>
+    <div className="dropdown dropdown-hover pr-15 sm:text-sm" ref={ref}>
       <label
         tabIndex="0"
-        className="btn m-1 btn-primary text-white"
+        className="btn m-1 btn-primary text-white "
         onClick={onClickHandler}
       >
         Categorias

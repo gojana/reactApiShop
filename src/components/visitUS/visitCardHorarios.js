@@ -1,7 +1,7 @@
-const VisitCardHorarios=() =>{
+const VisitCardHorarios = () => {
   return (
-    <div className="card w-96 bg-neutral shadow-xl ">
-      <div className="card-body text-white">
+    <div className="card w-auto bg-neutral shadow-xl ">
+      <div className="card-body text-white sm:text-sm">
         <h2 className="card-title">Horarios</h2>
         <p>L-V : 8:00 AM - 5:00 PM</p>
         <p>S-D : 8:00 AM - 5:00 PM</p>
@@ -9,5 +9,5 @@ const VisitCardHorarios=() =>{
       </div>
     </div>
   );
-}
+};
 export default VisitCardHorarios;

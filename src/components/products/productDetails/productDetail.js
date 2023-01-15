@@ -42,17 +42,17 @@ const ProductDetail = () => {
 
   return (
     <Fragment>
-      <div className="navbar bg-base-100 justify-start xl:ml-36 lg:ml-44 md:ml-40 sm:ml-40  mt-5 -mb-10 flex  sm:flex-row">
+      <div className="navbar bg-base-100  xl:ml-36 lg:ml-44 md:ml-40 mt-5 -mb-10 flex lg:justify-start md:justify-start sm:flex-row sm:justify-center">
         <SearchTool />
       </div>
 
-      <div className="max-w-7xl ml-40 sm:x-auto px-4 sm:px-6 lg:px-8 xl:p-2 mt-20">
+      <div className="max-w-7xl ml-40 sm:ml-5 sm:x-auto px-4 sm:px-6 lg:px-8 xl:p-2 mt-20">
         {isLoading && (
           <div className="flex items-center ">
             <LoadingCard css={'mb-80'} />
           </div>
         )}
-        <div className="flex flex-col md:flex-row -mx-4 mr-10">
+        <div className="flex flex-col lg:flex-row md:flex-row -mx-4 sm:mr-1  ">
           {!isLoading && !requestError && (
             <Fragment>
               <ProductDetImage imgProdCollection={product.images} />

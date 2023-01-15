@@ -104,8 +104,8 @@ const SearchTool = () => {
 
   return (
     <div className="p-2">
-      <div className="flex justify-center w-full">
-        <div className="dropdown dropdown-bottom  w-full" ref={ref}>
+      <div className="flex justify-center w-auto">
+        <div className="dropdown dropdown-bottom  w-full  " ref={ref} >
           <div className="relative">
             <div className="flex justify-center absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
               {isLoading ? <SpinningLoadingIcon /> : <SearchIcon />}

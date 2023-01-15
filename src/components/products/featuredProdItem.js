@@ -67,7 +67,7 @@ function FeaturedProdItem(props) {
           </span>
 
           <button
-            className="btn btn-primary lg:w-20 w-auto h-auto ml-auto  "
+            className="btn btn-primary lg:w-20 w-auto h-auto ml-auto sm:w-14  "
             onClick={addProductToCartHandler}
           >
             {isLoading ? <SpinningLoadingIcon /> : <CartIcon />}

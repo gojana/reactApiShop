@@ -9,7 +9,13 @@ module.exports = {
       },
     },
     screens: {
-      sm: '480px',
+      sm: [
+        // Sidebar appears at 768px, so revert to `sm:` styles between 768px
+        // and 868px, after which the main content area is wide enough again to
+        // apply the `md:` styles.
+        { min: '280px' },
+        { max: '767' },
+      ],
       md: '768px',
       lg: '976px',
       xl: '1440px',

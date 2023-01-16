@@ -31,7 +31,8 @@ const loginSlice = createSlice({
     },
     updateUser(state, action) {
       const requestData = action.payload;
-      state.username = requestData.username;
+      if (requestData.username) state.username = requestData.username;
+
       state.photo = requestData.photo;
     },
   },

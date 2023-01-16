@@ -2,8 +2,8 @@ import { WhatsAppIcon } from '../icons/icons';
 
 const VisitDatos = () => {
   return (
-    <div className="bg-neutral relative flex flex-wrap py-6 rounded shadow-md">
-      <div className="lg:w-1/2 px-6">
+    <div className="bg-neutral relative flex flex-wrap py-2 rounded-xl shadow-md ">
+      <div className="lg:w-1/2 px-6 ">
         <h2 className="title-font font-semibold text-white tracking-widest text-xs">
           Direccion
         </h2>

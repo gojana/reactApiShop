@@ -8,6 +8,7 @@ const FooterMedia = (props) => {
         <Link className="link hover:-translate-y-1 hover:scale-150  duration-300" to="/welcome">{props.comp1}</Link>
         <Link className="link hover:-translate-y-1 hover:scale-150  duration-300" to="/welcome">{props.comp2}</Link>
         <Link className="link hover:-translate-y-1 hover:scale-150  duration-300" to="/welcome">{props.comp3}</Link>
+        <Link className="link hover:-translate-y-1 hover:scale-150  duration-300" to="/welcome">{props.comp4}</Link>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import { FacebookIcon } from '../icons/icons';
 import { ReactIcon } from '../icons/icons';
 import { NodeJsIcon } from '../icons/icons';
 import { MongoIcon } from '../icons/icons';
+import {TailwindIcon} from '../icons/icons';
 
 const FooterC = () => {
   return (
@@ -25,6 +26,7 @@ const FooterC = () => {
         comp1={<ReactIcon />}
         comp2={<NodeJsIcon />}
         comp3={<MongoIcon />}
+        comp4={<TailwindIcon/>}
       />
     </footer>
   );

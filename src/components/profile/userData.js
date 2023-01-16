@@ -25,6 +25,7 @@ const UserData = (props) => {
 
   const updateUserRequest = async () => {
     const fd = new FormData();
+  
     fd.append('username', userNameInput.current.value);
     fd.append('photo', imgUpload);
     try {

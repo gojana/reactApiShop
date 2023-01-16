@@ -42,11 +42,11 @@ const ProductDetail = () => {
 
   return (
     <Fragment>
-      <div className="navbar bg-base-100  xl:ml-36 lg:ml-44 md:ml-40 mt-5 -mb-10 flex lg:justify-start md:justify-start sm:flex-row sm:justify-center">
+      <div className="navbar bg-base-100  xl:ml-36 lg:ml-10 md:ml-8 mt-5 -mb-10 flex lg:justify-start md:justify-start sm:flex-row sm:justify-center">
         <SearchTool />
       </div>
 
-      <div className="max-w-7xl ml-40 sm:ml-5 sm:x-auto px-4 sm:px-6 lg:px-8 xl:p-2 mt-20">
+      <div className="max-w-8xl ml-40 sm:ml-5 sm:x-auto  sm:px-6 xl:p-2 mt-20">
         {isLoading && (
           <div className="flex items-center ">
             <LoadingCard css={'mb-80'} />

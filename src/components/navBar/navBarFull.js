@@ -97,7 +97,9 @@ const NavBarFull = () => {
           <Hamburger />
           <Carrito />
           {isLoading ? (
-            <button className="btn btn-primary loading">Cargando</button>
+            <button className="btn btn-primary loading sm:w-20">
+              Cargando
+            </button>
           ) : isLoggedSelector ? (
             <UserBadge
               logout={logoutAction}
@@ -106,7 +108,7 @@ const NavBarFull = () => {
               id={userId}
             />
           ) : (
-            <ButtonGeneric name="LOGIN" route="login" css="ml-5" />
+            <ButtonGeneric name="LOGIN" route="login" css="ml-1" />
           )}
         </NavBarR>
       </NavBarCont>

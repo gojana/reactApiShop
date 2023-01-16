@@ -25,7 +25,7 @@ const ProductDetailText = (props) => {
 
   return (
     <Fragment>
-      <div className="p-4 rounded border border-primary lg:ml-30 lg:-mt-2 xl:ml-50  md:flex-1 md:ml-10 sm:mt-4">
+      <div className="p-4 rounded border border-primary lg:ml-30 lg:-mt-2 md:-mt-2 xl:ml-50  md:flex-1 md:ml-10 sm:mt-4">
         <div className=" px-4 ">
           <h2 className="mb-2 leading-tight tracking-tight font-bold  text-2xl md:text-3xl">
             {`${props.productName}`}
@@ -48,7 +48,7 @@ const ProductDetailText = (props) => {
           <p>{`${props.specs}`}</p>
           <p>{`Stock: ${props.stock}`}</p>
 
-          <div className="flex py-4 space-x-4 mt-8">
+          <div className="flex py-4 space-x-4 mt-24">
             <button
               type="button"
               className="btn btn-primary h-10 px-6 py-2 font-semibold rounded-xl  text-white"

@@ -13,7 +13,7 @@ const setDay = () => {
 
 const DayNightButton = () => {
   return (
-    <div className="btn btn-ghost btn-circle xl:mr-1 lg:mr-1 md:mr-1 sm:mr-5 ">
+    <div className="btn btn-ghost btn-circle xl:mr-1 lg:mr-1 md:mr-1 sm:mr-0 ">
       <label className="swap swap-rotate">
         <input type="checkbox" id="dayNight" onClick={setDay} />
         <SunIcon />

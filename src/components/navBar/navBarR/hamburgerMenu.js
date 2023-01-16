@@ -11,12 +11,11 @@ const HamburgerM = () => {
 
   return (
     <div className="dropdown" ref={ref}>
-      <div className="lg:hidden">
+      <div className="lg:hidden md:hidden">
         {
           <button
-            id="menu-hamburger-btn dropdown dropdown-hover  "
             type="button"
-            className={`z-40 block hamburger focus:outline-none mt-2 ${
+            className={`z-40 block hamburger focus:outline-none mt-2 sm:-mr-2 ${
               isComponentVisible ? 'open' : ''
             }`}
             onClick={handleClick}
@@ -40,7 +39,7 @@ const HamburgerM = () => {
           <Link to="/welcome">Blog</Link>
         </li>
         <li>
-          <Link to="/welcome">About</Link>
+          <Link to="/about">About</Link>
         </li>
       </ul>
     </div>

@@ -56,6 +56,7 @@ const NavBarFull = () => {
         throw new Error('algo salio muy mal!');
       }
       dispatch(loginActions.login(response.data.user));
+
       setIsLoading(false);
       dispatch(
         notificationActions.showNotification({

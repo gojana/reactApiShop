@@ -12,7 +12,7 @@ const BlogElem = (props) => {
       </h6>
       <p className="mb-3 text-sm text-white">{props.cardBodyText}</p>
       <Link
-        to='/welcome'
+        to="/blog/:blogArticle"
         className="inline-flex items-center font-semibold transition-colors duration-200 text-primary hover:text-white"
       >
         Aprenda mas

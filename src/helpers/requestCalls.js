@@ -1,3 +1,4 @@
+
 async function requestAPI(url, method, body) {
   try {
     const res = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v1/${url}`, {
@@ -34,5 +35,7 @@ export async function requestAPIwFiles(url, method, body) {
     return 'error';
   }
 }
+
+
 
 export default requestAPI;

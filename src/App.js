@@ -15,6 +15,8 @@ import ProductItem from './layouts/productItem';
 import CartPage from './layouts/cartPage';
 import ErrorCard from './components/utilitaryCards/errorCard';
 import About from './layouts/about';
+import AdminActions from './layouts/adminActions';
+import AdminMainScreen from './components/admin/adminMainScreen';
 
 function App() {
   const scrollUpRef = useRef();
@@ -41,10 +43,13 @@ function App() {
         <Route path="/profile" exact>
           <Profile />
         </Route>
+        <Route path="/adminPanel" exact>
+        <AdminMainScreen/>
+        </Route>
         <Route path="/about" exact>
           <About />
         </Route>
-        <Route path="/cart">
+        <Route path="/cart" exact>
           <CartPage />
         </Route>
         <Route path="/resetPassword/:resetToken">
@@ -56,8 +61,48 @@ function App() {
         <Route path="/products/:productId">
           <ProductItem />
         </Route>
+        <Route path="/blog" exact>
+          <ErrorCard
+            img={'work'}
+            message={'Seccion en construccion'}
+            messageDetail={
+              'pronto estara terminada! mientras espera junto al topo...'
+            }
+          />
+        </Route>
+        <Route path="/blog/:blogArticle" exact>
+          <ErrorCard
+            img={'work'}
+            message={'Seccion en construccion'}
+            messageDetail={
+              'pronto estara terminada! mientras espera junto al topo...'
+            }
+          />
+        </Route>
+        <Route path="/orders/:userId">
+          <ErrorCard
+            img={'work'}
+            message={'Seccion en construccion'}
+            messageDetail={
+              'pronto estara terminada! mientras espera junto al topo...'
+            }
+          />
+        </Route>
+        <Route path="/reviews/:userId">
+          <ErrorCard
+            img={'work'}
+            message={'Seccion en construccion'}
+            messageDetail={
+              'pronto estara terminada! mientras espera junto al topo...'
+            }
+          />
+        </Route>
         <Route path="/*">
-          <ErrorCard />
+          <ErrorCard
+            img={'error'}
+            message={'OOPS! Algo ha salido mal!'}
+            messageDetail={'sip, aqui va el error 404'}
+          />
         </Route>
       </Switch>
       <section id="footer">

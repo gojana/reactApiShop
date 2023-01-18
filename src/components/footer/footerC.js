@@ -8,7 +8,7 @@ import { FacebookIcon } from '../icons/icons';
 import { ReactIcon } from '../icons/icons';
 import { NodeJsIcon } from '../icons/icons';
 import { MongoIcon } from '../icons/icons';
-import {TailwindIcon} from '../icons/icons';
+import { TailwindIcon } from '../icons/icons';
 
 const FooterC = () => {
   return (
@@ -18,15 +18,22 @@ const FooterC = () => {
       <FooterMedia
         title={'Redes Sociales'}
         comp1={<TwitterIcon />}
+        linkTo1={'https://twitter.com/'}
         comp2={<YoutubeIcon />}
+        linkTo2={'http://youtube.com'}
         comp3={<FacebookIcon />}
+        linkTo3={'http://facebook.com'}
       />
       <FooterMedia
         title={'Desarrollado con:'}
         comp1={<ReactIcon />}
+        linkTo1={'http://reactjs.com'}
         comp2={<NodeJsIcon />}
+        linkTo2={'https://nodejs.org/en/'}
         comp3={<MongoIcon />}
-        comp4={<TailwindIcon/>}
+        linkTo3={'https://www.mongodb.com/'}
+        comp4={<TailwindIcon />}
+        linkTo4={'https://tailwindcss.com/'}
       />
     </footer>
   );

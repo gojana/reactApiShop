@@ -27,7 +27,7 @@ const loginSlice = createSlice({
       state.role = requestData.role;
       state.photo = requestData.photo;
       state.username = requestData.username;
-      state.id = requestData.id;
+      state.id = requestData._id;
     },
     updateUser(state, action) {
       const requestData = action.payload;

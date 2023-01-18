@@ -29,13 +29,24 @@ const UserBadge = (props) => {
           isComponentVisible ? 'visible' : 'hidden'
         }`}
       >
+        <Link
+          className={`justify-between link-hover ${
+            props.role === 'admin' ? '' : 'hidden'
+          } `}
+          to="/adminPanel"
+        >
+          Panel Admin
+        </Link>
         <Link className="justify-between link-hover" to="/profile">
           Perfil
         </Link>
-        <Link to="/login" className="justify-between link-hover">
+        <Link to={`/orders/${props.id}`} className="justify-between link-hover">
           mis compras
         </Link>
-        <Link to="/login" className="justify-between link-hover">
+        <Link
+          to={`/reviews/${props.id}`}
+          className="justify-between link-hover"
+        >
           mis reviews
         </Link>
         <Link

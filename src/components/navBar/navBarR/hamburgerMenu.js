@@ -36,7 +36,7 @@ const HamburgerM = () => {
           <Link to="/products">Productos</Link>
         </li>
         <li>
-          <Link to="/welcome">Blog</Link>
+          <Link to="/blog">Blog</Link>
         </li>
         <li>
           <Link to="/about">About</Link>

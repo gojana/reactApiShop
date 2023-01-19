@@ -560,12 +560,12 @@ export const UserIcon = () => {
 export const PlantIcon = () => {
   return (
     <svg
+      className="mt-2"
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
       width="24.000000pt"
       height="24.000000pt"
       viewBox="0 0 880.000000 942.000000"
-      preserveAspectRatio="xMidYMid meet"
     >
       <g
         transform="translate(0.000000,942.000000) scale(0.100000,-0.100000)"
@@ -609,6 +609,7 @@ export const PlantIcon = () => {
 export const ReviewIcon = () => {
   return (
     <svg
+      className="mt-1"
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
       width="24.000000pt"

@@ -16,7 +16,6 @@ import CartPage from './layouts/cartPage';
 import ErrorCard from './components/utilitaryCards/errorCard';
 import About from './layouts/about';
 import AdminActions from './layouts/adminActions';
-import AdminMainScreen from './components/admin/adminMainScreen';
 
 function App() {
   const scrollUpRef = useRef();
@@ -44,7 +43,7 @@ function App() {
           <Profile />
         </Route>
         <Route path="/adminPanel" exact>
-        <AdminMainScreen/>
+          <AdminActions />
         </Route>
         <Route path="/about" exact>
           <About />

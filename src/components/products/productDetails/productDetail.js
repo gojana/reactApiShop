@@ -42,7 +42,7 @@ const ProductDetail = () => {
 
   return (
     <Fragment>
-      <div className="navbar bg-base-100  xl:ml-36 lg:ml-10 md:ml-8 mt-5 -mb-10 flex lg:justify-start md:justify-start sm:flex-row sm:justify-center">
+      <div className="flex md:ml-8 mt-5 -mb-10  lg:justify-start md:justify-start sm:justify-center">
         <SearchTool />
       </div>
 

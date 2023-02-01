@@ -103,7 +103,7 @@ const SearchTool = () => {
   };
 
   return (
-    <div className="p-2">
+    <div className="p-2 flex">
       <div className="flex justify-center w-auto">
         <div className="dropdown dropdown-bottom  w-full  " ref={ref} >
           <div className="relative">

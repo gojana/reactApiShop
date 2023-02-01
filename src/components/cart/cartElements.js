@@ -63,6 +63,7 @@ const CartElements = (props) => {
   return (
     <tbody>
       <tr>
+        <td></td>
         <td>
           <div className="flex items-center space-x-3">
             <div className="avatar">

@@ -36,7 +36,7 @@ const Profile = (props) => {
               />
             </div>
           </div>
-          <div className=" mt-28 space-x-8 flex   justify-center">
+          <div className=" mt-28  flex gap-2  justify-center">
             <ButtonGeneric
               name="Datos Cuenta"
               route={'profile'}

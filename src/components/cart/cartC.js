@@ -22,6 +22,7 @@ const CartC = () => {
           <table className="table w-full">
             <thead>
               <tr>
+                <th></th>
                 <th>Nombre Producto</th>
                 <th>precio</th>
                 <th>cantidad</th>

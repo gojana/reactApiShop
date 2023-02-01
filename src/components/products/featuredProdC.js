@@ -96,13 +96,14 @@ const FeaturedProdC = (props) => {
       ) : (
         <RenderItems />
       )}
-
-      <Pagination
-        currentPage={currentPage}
-        totalCount={filteredProd.length}
-        pageSize={pageSize}
-        onPageChange={(page) => setCurrentPage(page)}
-      ></Pagination>
+      <div className="flex flex-col items-center">
+        <Pagination
+          currentPage={currentPage}
+          totalCount={filteredProd.length}
+          pageSize={pageSize}
+          onPageChange={(page) => setCurrentPage(page)}
+        ></Pagination>
+      </div>
     </Fragment>
   );
 };

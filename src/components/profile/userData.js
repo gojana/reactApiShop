@@ -5,10 +5,10 @@ import { notificationActions } from '../../redux/slices/notification-slice';
 
 import { requestAPIwFiles } from '../../helpers/requestCalls';
 
-import ButtonGeneric from '../buttons/buttonGeneric';
+import ButtonCommon from '../buttons/buttonCommon';
 
 const UserData = (props) => {
-  //manejo state request
+
   const [isLoading, setIsLoading] = useState(false);
   //storage temporal de imagen a subir
   const [imgUpload, setImgUpload] = useState([]);
@@ -25,7 +25,7 @@ const UserData = (props) => {
 
   const updateUserRequest = async () => {
     const fd = new FormData();
-  
+
     fd.append('username', userNameInput.current.value);
     fd.append('photo', imgUpload);
     try {
@@ -66,10 +66,12 @@ const UserData = (props) => {
   };
 
   const disableHandler = (event) => {
+    event.preventDefault();
     setUpdateData(true);
     setDisable(false);
   };
   const cancelHandler = (event) => {
+    event.preventDefault();
     setUpdateData(false);
     setDisable(true);
   };
@@ -82,7 +84,7 @@ const UserData = (props) => {
     <div className="p-8 rounded border border-gray-200">
       <h1 className="font-medium text-3xl text-white">Datos de cuenta</h1>
       <form>
-        <div className="mt-8 grid lg:grid-cols-2 gap-4">
+        <div className="mt-8 flex flex-col gap-5 ">
           <div>
             <label
               htmlFor="name"
@@ -108,7 +110,7 @@ const UserData = (props) => {
             >
               Email
             </label>
-            <label className="input bg-base-100 border rounded py-2 px-3 block  w-full">{`${props.mail}`}</label>
+            <label className="input bg-base-100 border rounded py-2 px-3  block  w-full text-ellipsis overflow-hidden ...">{`${props.mail}`}</label>
           </div>
           <div>
             <label
@@ -122,7 +124,7 @@ const UserData = (props) => {
             <input
               id="uploadImage"
               type="file"
-              className={`file-input text-white w-full max-w-xs ${
+              className={`file-input text-white w-full max-w-xs border-primary ${
                 !updateData ? 'hidden' : ''
               }`}
               onChange={uploadFileHandler}
@@ -130,11 +132,10 @@ const UserData = (props) => {
           </div>
         </div>
         <div className=" mt-8">
-          <ButtonGeneric
+          <ButtonCommon
             name="Cambiar Datos"
             css={`py-2 px-4 ${!updateData ? '' : 'hidden'}`}
             action={disableHandler}
-            route={'profile'}
           />
           {isLoading ? (
             <button
@@ -145,19 +146,17 @@ const UserData = (props) => {
               Cargando
             </button>
           ) : (
-            <ButtonGeneric
+            <ButtonCommon
               name="Cambiar"
               css={`mr-5 ${!updateData ? 'hidden' : ''}`}
               action={updateUserHandler}
-              route={'profile'}
             />
           )}
 
-          <ButtonGeneric
+          <ButtonCommon
             name="Cancelar"
-            css={`py-2 px-4 ${!updateData ? 'hidden' : ''}`}
+            css={`py-2 px-4 mt-5 ${!updateData ? 'hidden' : ''}`}
             action={cancelHandler}
-            route={'profile'}
           />
         </div>
       </form>

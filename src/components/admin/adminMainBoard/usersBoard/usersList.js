@@ -2,10 +2,12 @@ import { useState, useCallback, useEffect, Fragment } from 'react';
 import { notificationActions } from '../../../../redux/slices/notification-slice';
 import requestAPI from '../../../../helpers/requestCalls';
 import { useDispatch } from 'react-redux';
+import ButtonCommon from '../../../buttons/buttonCommon';
 
-const UserList = () => {
+const UserList = (props) => {
   const [usersList, setUsersList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   const dispatch = useDispatch();
 
   const requestUsers = useCallback(async () => {
@@ -20,6 +22,7 @@ const UserList = () => {
         setIsLoading(false);
         throw new Error(`algo salio muy mal!`);
       }
+
       setUsersList(response.data.getUsers);
       setIsLoading(false);
     } catch (err) {
@@ -54,6 +57,7 @@ const UserList = () => {
           type: 'alert-success',
         })
       );
+      requestUsers();
     } catch (err) {
       setIsLoading(false);
       dispatch(
@@ -64,30 +68,31 @@ const UserList = () => {
       );
     }
   };
-
   const onClickDeleteUser = (id) => {
     deleteUser(id);
   };
 
   useEffect(() => {
     requestUsers();
-  }, []);
+  }, [props.willUpdate]);
 
   return (
-    <div>
-      <table className="table w-full">
+    <div className="overflow-x-auto ">
+      <table className="table w-full  mb-5">
         <thead>
           <tr>
+            <th></th>
             <th>userName</th>
             <th>email</th>
-            <th>Acciones</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {usersList.map((user) => {
             return (
               <Fragment key={user._id}>
-                <tr>
+                <tr className="hover">
+                  <td></td>
                   <td>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
@@ -104,17 +109,24 @@ const UserList = () => {
                     </div>
                   </td>
                   <td>
-                    {user.mail}
-                    <br />
+                    <div>{`${user.mail}`}</div>
                   </td>
                   <th>
-                    <button
-                      className="btn btn-primary mr-5"
-                      onClick={() => onClickDeleteUser(user._id)}
-                    >
-                      borrar
-                    </button>
-                    <button className="btn btn-primary">modificar</button>
+                    <div className="flex justify-center ">
+                      <ButtonCommon
+                        name="borrar"
+                        css={'mr-5'}
+                        action={() => onClickDeleteUser(user._id)}
+                      />
+
+                      <ButtonCommon
+                        name="modificar"
+                        css={'btn btn-primary'}
+                        action={() => {
+                          props.action(user);
+                        }}
+                      />
+                    </div>
                   </th>
                 </tr>
               </Fragment>

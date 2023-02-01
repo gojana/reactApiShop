@@ -1,9 +1,13 @@
 const AdminMenuEl = (props) => {
+  const onClickhandler = () => {
+    
+    props.action(props.title);
+  };
   return (
-    <div className={`mr-4 items-center`}>
+    <div className={` items-center`}>
       <div
         className={`btn ${props.colorMenuCard} lg:btn-md lg:w-full md:w-5/6 md:btn-wide-sm sm:btn-wide sm:mt-2`}
-        onClick={props.action}
+        onClick={onClickhandler}
       >
         <div className="flex flex-row ">
           {props.img}

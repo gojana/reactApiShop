@@ -5,7 +5,7 @@ import { loginActions } from '../../redux/slices/login-slice';
 import { useHistory } from 'react-router-dom';
 import { notificationActions } from '../../redux/slices/notification-slice';
 
-import ButtonGeneric from '../buttons/buttonGeneric';
+import ButtonCommon from '../buttons/buttonCommon';
 
 const PassData = (props) => {
   //manejo state request
@@ -41,12 +41,6 @@ const PassData = (props) => {
       await requestAPI('users/logout', 'POST');
 
       dispatch(loginActions.logout());
-      dispatch(
-        notificationActions.showNotification({
-          message: 'Deslogueado con exito',
-          type: 'alert-success',
-        })
-      );
       setIsLoading(false);
     } catch (err) {
       dispatch(
@@ -106,7 +100,7 @@ const PassData = (props) => {
   };
 
   return (
-    <div className="p-8 rounded border border-gray-200">
+    <div className="p-8 rounded border  border-gray-200">
       <h1 className="font-medium text-3xl text-white">Cambiar Password</h1>
       <form>
         <div className="mt-5">
@@ -157,25 +151,23 @@ const PassData = (props) => {
             />
           </div>
         </div>
-        <div className=" mt-8">
+        <div className="flex lg:flex-row md:flex-row sm:flex-col items-center gap-5 mt-8">
           {isLoading ? (
             <button className="btn btn-primary loading py-2 px-4">
               Cargando
             </button>
           ) : (
-            <ButtonGeneric
+            <ButtonCommon
               name="Cambiar Password"
-              css={`py-2 px-4 ${btnActive ? '' : 'btn-disabled'}`}
+              css={`py-2  ${btnActive ? '' : 'btn-disabled'}`}
               action={changePassHandler}
-              route={'profile'}
             />
           )}
 
-          <ButtonGeneric
+          <ButtonCommon
             name="Cancelar"
-            css={`py-2 px-4 ml-5`}
+            css={`lg:mt-0 md:lt-0sm:mt-5`}
             action={props.close}
-            route={'profile'}
           />
         </div>
       </form>

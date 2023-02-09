@@ -4,7 +4,7 @@ import requestAPI from '../../../../helpers/requestCalls';
 import { useDispatch } from 'react-redux';
 import ButtonCommon from '../../../buttons/buttonCommon';
 
-const ProductsList = () => {
+const ProductsList = (props) => {
   const [productsList, setProductsList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
@@ -35,6 +35,37 @@ const ProductsList = () => {
     }
   }, []);
 
+  const deleteProduct = async (idProd) => {
+    try {
+      const response = await requestAPI(`products/id/${idProd}`, 'DELETE');
+
+      if (response.status === 'fail') {
+        setIsLoading(false);
+        throw new Error(response.message);
+      }
+      if (response === 'error') {
+        setIsLoading(false);
+        throw new Error(`algo salio muy mal! ${response.message}`);
+      }
+
+      setIsLoading(false);
+      dispatch(
+        notificationActions.showNotification({
+          message: `producto borrado!`,
+          type: 'alert-success',
+        })
+      );
+    } catch (err) {
+      setIsLoading(false);
+      dispatch(
+        notificationActions.showNotification({
+          message: `${err}`,
+          type: 'alert-error',
+        })
+      );
+    }
+  };
+
   useEffect(() => {
     requestProducts();
   }, []);
@@ -49,7 +80,11 @@ const ProductsList = () => {
             <th>Tipo</th>
             <th>Stock</th>
             <th>Precio</th>
-            <th></th>
+            <th>
+              <div className="flex justify-center">
+                <ButtonCommon name="Añadir Producto" css={'btn btn-primary'} />
+              </div>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -84,9 +119,17 @@ const ProductsList = () => {
 
                   <th>
                     <div className="flex justify-center ">
-                      <ButtonCommon name="borrar" css={'mr-5'} />
+                      <ButtonCommon
+                        name="borrar"
+                        css={'mr-5'}
+                        action={() => deleteProduct(prod._id)}
+                      />
 
-                      <ButtonCommon name="modificar" css={'btn btn-primary'} />
+                      <ButtonCommon
+                        name="modificar"
+                        css={'btn btn-primary'}
+                        action={() => props.update(prod)}
+                      />
                     </div>
                   </th>
                 </tr>

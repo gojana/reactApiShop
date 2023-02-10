@@ -71,7 +71,6 @@ const UserList = (props) => {
   const onClickDeleteUser = (id) => {
     deleteUser(id);
   };
-
   useEffect(() => {
     requestUsers();
   }, [props.willUpdate]);

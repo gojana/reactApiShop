@@ -49,6 +49,7 @@ const ProductsList = (props) => {
       }
 
       setIsLoading(false);
+      requestProducts();
       dispatch(
         notificationActions.showNotification({
           message: `producto borrado!`,

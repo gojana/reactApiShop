@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef,useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { notificationActions } from '../../../../redux/slices/notification-slice';
 import { requestAPIwFiles } from '../../../../helpers/requestCalls';
@@ -15,11 +15,51 @@ const ProductsUpdate = (props) => {
   const [btnActive, setBtnActive] = useState(false);
 
   const nameInput = useRef();
+  const typeSelect = useRef();
   const growthTimeInput = useRef();
   const priceInput = useRef();
   const stockInput = useRef();
 
-  const updateProduct = () => {};
+  const dispatch = useDispatch();
+
+  const updateProductRequest = async () => {
+    const fd = new FormData();
+    fd.append('name', nameInput.current.value);
+    fd.append('type', nameInput.current.value);
+    fd.append('characteristics', [growthTimeInput.current.value]);
+    fd.append('photo', imgUpload);
+
+    try {
+      setIsLoading(true);
+      const response = await requestAPIwFiles(`products/id/${props.data._id}`, 'PATCH', fd);
+      if (response.status === 'fail') {
+        setIsLoading(false);
+        throw new Error(response.message);
+      }
+      if (response === 'error') {
+        setIsLoading(false);
+        throw new Error('algo salio muy mal!');
+      }
+      dispatch(
+        notificationActions.showNotification({
+          message: `datos de usuario actualizados!`,
+          type: 'alert-success',
+        })
+      );
+
+      setIsLoading(false);
+      props.update(true);
+      props.action();
+    } catch (err) {
+      setIsLoading(false);
+      dispatch(
+        notificationActions.showNotification({
+          message: `${err}`,
+          type: 'alert-error',
+        })
+      );
+    }
+  };
 
   const updateProductHandler = () => {};
 
@@ -58,6 +98,7 @@ const ProductsUpdate = (props) => {
             selectName="Tipo Producto"
             selectedValue={props.data.type}
             items={['barbecho', 'almacigo', 'semilla']}
+            ref={typeSelect}
           />
           <FormSelect
             selectName="Epoca Cultivo"

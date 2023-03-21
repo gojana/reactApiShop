@@ -9,6 +9,7 @@ const FormUploadFile = (props) => {
         type="file"
         className="file-input file-input-sm file-input-primary file-input-bordered max-w-xs w-full "
         onChange={props.action}
+        multiple
       />
     </div>
   );

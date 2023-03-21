@@ -1,4 +1,3 @@
-
 async function requestAPI(url, method, body) {
   try {
     const res = await fetch(`${process.env.REACT_APP_BASE_URL}/api/v1/${url}`, {
@@ -26,7 +25,6 @@ export async function requestAPIwFiles(url, method, body) {
       body: body,
       headers: {
         Accept: '*/*',
-        'Access-Control-Allow-Origin': 'http://127.0.0.1:3000',
       },
     });
     const dataParsed = await res.json();
@@ -35,7 +33,5 @@ export async function requestAPIwFiles(url, method, body) {
     return 'error';
   }
 }
-
-
 
 export default requestAPI;

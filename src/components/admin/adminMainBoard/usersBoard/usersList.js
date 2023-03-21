@@ -68,12 +68,9 @@ const UserList = (props) => {
       );
     }
   };
-  const onClickDeleteUser = (id) => {
-    deleteUser(id);
-  };
   useEffect(() => {
     requestUsers();
-  }, [props.willUpdate]);
+  }, [props.updatingList]);
 
   return (
     <div className="overflow-x-auto ">
@@ -115,14 +112,14 @@ const UserList = (props) => {
                       <ButtonCommon
                         name="borrar"
                         css={'mr-5'}
-                        action={() => onClickDeleteUser(user._id)}
+                        action={() => deleteUser(user._id)}
                       />
 
                       <ButtonCommon
                         name="modificar"
                         css={'btn btn-primary'}
                         action={() => {
-                          props.action(user);
+                          props.showUpdate(user);
                         }}
                       />
                     </div>

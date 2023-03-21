@@ -102,7 +102,7 @@ const FeaturedProdC = (props) => {
           totalCount={filteredProd.length}
           pageSize={pageSize}
           onPageChange={(page) => setCurrentPage(page)}
-        ></Pagination>
+        />
       </div>
     </Fragment>
   );

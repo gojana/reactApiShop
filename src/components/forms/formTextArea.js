@@ -5,8 +5,9 @@ const TextArea = (props) => {
         {`${props.textAreaName} `}
       </label>
       <textarea
-        placeholder={`aqui van las caracteristicas: ${1}`}
+        placeholder={`Caracteristicas adicionales :${props.characteristics}`}
         className="textarea textarea-bordered textarea-md w-full max-w-xs"
+        ref={props.refInput}
       ></textarea>
     </div>
   );

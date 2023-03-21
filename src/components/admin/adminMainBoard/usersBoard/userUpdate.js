@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import ButtonCommon from '../../../buttons/buttonCommon';
+import FormUploadFile from '../../../forms/formUploadFile';
 import { useDispatch } from 'react-redux';
 import { notificationActions } from '../../../../redux/slices/notification-slice';
 import { requestAPIwFiles } from '../../../../helpers/requestCalls';
@@ -7,7 +8,7 @@ import { requestAPIwFiles } from '../../../../helpers/requestCalls';
 const UserUpdate = (props) => {
   const [imgUpload, setImgUpload] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [btnActive, setBtnActive] = useState(false);
+  //const [btnActive, setBtnActive] = useState(false);
 
   const userNameInput = useRef();
   const mailInput = useRef();
@@ -40,7 +41,7 @@ const UserUpdate = (props) => {
 
       setIsLoading(false);
       props.update(true);
-      props.action();
+      props.cancel();
     } catch (err) {
       setIsLoading(false);
       dispatch(
@@ -98,17 +99,10 @@ const UserUpdate = (props) => {
               ref={mailInput}
             ></input>
           </div>
-          <div className="flex flex-col">
-            <label className={`text-sm text-white mb-2  font-medium`}>
-              Cambiar Foto Perfil
-            </label>
-            <input
-              id="uploadImage"
-              type="file"
-              className="file-input file-input-sm file-input-primary file-input-bordered max-w-xs w-full "
-              onChange={uploadFileHandler}
-            />
-          </div>
+          <FormUploadFile
+            uploadName="Cambiar foto Perfil"
+            action={uploadFileHandler}
+          />
         </div>
         <div className="flex lg:flex-row md:flex-row sm:flex-col gap-2 mt-8">
           {isLoading ? (
@@ -122,7 +116,7 @@ const UserUpdate = (props) => {
               action={updateUserHandler}
             />
           )}
-          <ButtonCommon name="Cancelar" action={props.action} />
+          <ButtonCommon name="Cancelar" action={props.cancel} />
         </div>
       </form>
     </div>
